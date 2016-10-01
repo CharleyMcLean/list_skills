@@ -22,6 +22,8 @@ def print_list(items):
         print item
 
 
+
+
 def long_words(words):
     """Return words in input list that longer than 4 characters.
 
@@ -51,6 +53,8 @@ def long_words(words):
     return words_longer_than_four
 
 
+
+
 def n_long_words(words, n):
     """Return words in list longer than `n` characters.
 
@@ -77,6 +81,8 @@ def n_long_words(words, n):
             words_longer_than_n.append(word)
 
     return words_longer_than_n
+
+
 
 
 def smallest_int(numbers):
@@ -112,6 +118,8 @@ def smallest_int(numbers):
     return smallest_integer
 
 
+
+
 def largest_int(numbers):
     """Find the largest integer in a list of integers and return it.
 
@@ -145,6 +153,8 @@ def largest_int(numbers):
     return largest_integer
 
 
+
+
 def halvesies(numbers):
     """Return list of numbers from input list, each divided by two.
 
@@ -171,6 +181,8 @@ def halvesies(numbers):
     return halved_list
 
 
+
+
 def word_lengths(words):
     """Return the length of words in the input list.
 
@@ -188,6 +200,8 @@ def word_lengths(words):
         word_length_list.append(len(word))
     
     return word_length_list
+
+
 
 
 def sum_numbers(numbers):
@@ -219,6 +233,8 @@ def sum_numbers(numbers):
         sum_of_numbers = sum_of_numbers + number
 
     return sum_of_numbers
+
+
 
 
 def mult_numbers(numbers):
@@ -255,6 +271,8 @@ def mult_numbers(numbers):
     return product_of_numbers
 
 
+
+
 def join_strings(words):
     """Return a string of all input strings joined together.
 
@@ -284,6 +302,8 @@ def join_strings(words):
         joined_strings = joined_strings + word
 
     return joined_strings
+
+
 
 
 def average(numbers):
@@ -329,6 +349,8 @@ def average(numbers):
     return average_of_numbers_2
 
 
+
+
 def join_strings_with_comma(words):
     """Return ['list', 'of', 'words'] like "list, of, words".
 
@@ -365,6 +387,8 @@ def join_strings_with_comma(words):
     return comma_joined_strings
 
 
+
+
 def reverse_list(items):
     """Return the input list, reversed.
 
@@ -388,7 +412,22 @@ def reverse_list(items):
         ['apple', 'berry', 'cherry']
     """
 
-    return []
+    # Complete the function using a for loop.
+    # Create an empty list.
+    reversed_list = []
+
+    for i in range(len(items) - 1, -1, -1):
+        reversed_list.append(items[i])
+
+    return reversed_list
+
+
+    # Complete the function using list slicing.
+    reversed_list_2 = items[::-1]
+
+    return reversed_list_2
+
+
 
 
 def reverse_list_in_place(items):
@@ -414,7 +453,11 @@ def reverse_list_in_place(items):
         ['I', 'love', 'cookies']
     """
 
-    return []
+    for i in range(len(items) - 1):
+        popped_item = items.pop(0)
+        items.append(popped_item)
+
+    return items
 
 
 def duplicates(items):
