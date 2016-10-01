@@ -38,7 +38,7 @@ def long_words(words):
         >>> long_words(["all", "are", "tiny"])
         []
     """
-    # Create an empty list for the words longer than 4 characters
+    # Create an empty list for the words longer than 4 characters.
     words_longer_than_four = []
 
     # Iterate over the list of words and check their length.
@@ -66,7 +66,7 @@ def n_long_words(words, n):
         ['apples', 'bananas']
     """
 
-    # Create an empty list for the words longer than n characters
+    # Create an empty list for the words longer than n characters.
     words_longer_than_n = []
 
     # Iterate over the list of words and check their length.
@@ -163,7 +163,7 @@ def halvesies(numbers):
     # Create an empty list to hold the halved numbers.
     halved_list = []
     
-    # Iterate through number list. Convert values to floats. Divide by 2.
+    # Iterate through number list.  Convert values to floats. Divide by 2.
     for number in numbers:
         halved_number = float(number) / 2
         halved_list.append(halved_number)
@@ -183,7 +183,7 @@ def word_lengths(words):
     # Create an empty list to hold the word lengths.
     word_length_list = []
 
-    # Iterate through word list. Add word lengths to new list.
+    # Iterate through word list.  Add word lengths to new list.
     for word in words:
         word_length_list.append(len(word))
     
@@ -207,7 +207,18 @@ def sum_numbers(numbers):
         0
     """
 
-    return None
+    # Check if list is empty.  If it is, return 0.
+    if numbers == []:
+        return 0
+
+    # Create a counter.
+    sum_of_numbers = 0
+
+    # Iterate through the list.  Add each number to the counter.
+    for number in numbers:
+        sum_of_numbers = sum_of_numbers + number
+
+    return sum_of_numbers
 
 
 def mult_numbers(numbers):
@@ -230,7 +241,18 @@ def mult_numbers(numbers):
         1
     """
 
-    return None
+    # Check if list is empty.  If it is, return 1.
+    if numbers == []:
+        return 1
+
+    # Create a counter.
+    product_of_numbers = 1
+
+    # Iterate through the list.  Multiply the counter by each number.
+    for number in numbers:
+        product_of_numbers = product_of_numbers * number
+
+    return product_of_numbers
 
 
 def join_strings(words):
@@ -250,7 +272,18 @@ def join_strings(words):
         ''
     """
 
-    return "Not the right thing"
+    # Check if words is an empty list.  If so, return an empty string.
+    if words ==[]:
+        return ''
+
+    # Create an empty string.
+    joined_strings = ''
+    
+    # Iterate through the list of words and concatenate.
+    for word in words:
+        joined_strings = joined_strings + word
+
+    return joined_strings
 
 
 def average(numbers):
@@ -273,7 +306,27 @@ def average(numbers):
     a feel free to provide a good solution here.)
     """
 
-    return 0
+    # Checking if the list is empty.
+    if numbers == []:
+        return "No defined answer."
+
+    # Completing the function with a for loop.
+    # Create a counter for the sum of the numbers in the list.
+    # Iterate over the list and sum the numbers.
+    number_sum = 0
+
+    for number in numbers:
+        number_sum = number_sum + number
+
+    average_of_numbers = number_sum / float(len(numbers))
+
+    return average_of_numbers
+
+
+     # Completing the function without a for loop.
+    average_of_numbers_2 = sum(numbers) / float(len(numbers))
+    
+    return average_of_numbers_2
 
 
 def join_strings_with_comma(words):
@@ -293,7 +346,23 @@ def join_strings_with_comma(words):
         'Pretzel'
     """
 
-    return ""
+    # Check if words is an empty list.  If so, return an empty string.
+    if words ==[]:
+        return ''
+
+
+    # If only one word in list, return that word.
+    if len(words) == 1:
+        return words[0]
+
+    
+    # Begin with string containing first element of list.
+    # Iterate through the list of words and concatenate separated by a comma.
+    comma_joined_strings = words[0]
+    for i in range(1, len(words)):
+        comma_joined_strings = comma_joined_strings + ", " + words[i]
+
+    return comma_joined_strings
 
 
 def reverse_list(items):
