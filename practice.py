@@ -66,7 +66,17 @@ def n_long_words(words, n):
         ['apples', 'bananas']
     """
 
-    return ['the wrong thing']
+    # Create an empty list for the words longer than n characters
+    words_longer_than_n = []
+
+    # Iterate over the list of words and check their length.
+    # Append word to list if it meets the conditions.
+    for word in words:
+
+        if len(word) > n:
+            words_longer_than_n.append(word)
+
+    return words_longer_than_n
 
 
 def smallest_int(numbers):
@@ -88,7 +98,18 @@ def smallest_int(numbers):
         True
     """
 
-    return 100
+    # Check if list is empty.  If it is, return None (fail fast).
+    if numbers == []:
+        return None
+
+    # Iterate through the list to check if each number is less than the
+    # current value of the smallest integer.
+    smallest_integer = numbers[0]
+    for i in range(1, len(numbers) - 1):
+        if numbers[i] < smallest_integer:
+            smallest_integer = numbers[i]
+
+    return smallest_integer
 
 
 def largest_int(numbers):
@@ -110,7 +131,18 @@ def largest_int(numbers):
         True
     """
 
-    return 0
+    # Check if list is empty.  If it is, return None (fail fast).
+    if numbers == []:
+        return None
+
+    # Iterate through the list to check if each number is greater than the
+    # current value of the largest integer.
+    largest_integer = numbers[0]
+    for i in range(1, len(numbers)):
+        if numbers[i] > largest_integer:
+            largest_integer = numbers[i]
+
+    return largest_integer
 
 
 def halvesies(numbers):
@@ -128,7 +160,15 @@ def halvesies(numbers):
         [0.5, 2.5]
     """
 
-    return []
+    # Create an empty list to hold the halved numbers.
+    halved_list = []
+    
+    # Iterate through number list. Convert values to floats. Divide by 2.
+    for number in numbers:
+        halved_number = float(number) / 2
+        halved_list.append(halved_number)
+    
+    return halved_list
 
 
 def word_lengths(words):
@@ -140,7 +180,14 @@ def word_lengths(words):
         [5, 3, 5, 4]
     """
 
-    return []
+    # Create an empty list to hold the word lengths.
+    word_length_list = []
+
+    # Iterate through word list. Add word lengths to new list.
+    for word in words:
+        word_length_list.append(len(word))
+    
+    return word_length_list
 
 
 def sum_numbers(numbers):
