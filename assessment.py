@@ -17,7 +17,15 @@ def all_odd(numbers):
         []
     """
 
-    return ['the wrong thing']
+    # Create an empty list to hold the odd numbers.
+    odd_number_list = []
+
+    # Check if number is odd.  If it is, add to the odd number list.
+    for number in numbers:
+        if number % 2 != 0:
+            odd_number_list.append(number)
+
+    return odd_number_list
 
 
 def print_indices(items):
@@ -39,7 +47,11 @@ def print_indices(items):
         2 Volvo
     """
 
-    print "Nothing at all"
+    # Use enumerate function to print each index and the corresponding item.
+    for index, item in enumerate(items):
+        print index, item
+
+
 
 
 def foods_in_common(foods1, foods2):
@@ -70,7 +82,18 @@ def foods_in_common(foods1, foods2):
 
     """
 
-    return ['the wrong thing']
+    # Convert the foods lists to sets in order to perform math operations.
+    foods1_set = set(foods1)
+    foods2_set = set(foods2)
+
+    # Find the intersection of the two sets.
+    common_foods_set = foods1_set & foods2_set
+
+    # Convert the set back into a list and sort.
+    common_foods_list = list(common_foods_set)
+    common_foods_list.sort()
+
+    return common_foods_list
 
 
 def every_other_item(items):
@@ -87,7 +110,8 @@ def every_other_item(items):
        ['you', 'are', 'good', 'at', 'code']
     """
 
-    return ['the wrong thing']
+    # Return the desired output by using list slicing.
+    return items[::2]
 
 
 def largest_n_items(items, n):
@@ -112,7 +136,13 @@ def largest_n_items(items, n):
         [3, 3]
     """
 
-    return []
+    # Sort the original list.
+    items.sort()
+
+    # Create new list with n biggest numbers using list slicing.
+    largest_items_list = items[(len(items) - n):]
+
+    return largest_items_list
 
 
 #####################################################################

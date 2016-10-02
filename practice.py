@@ -452,12 +452,17 @@ def reverse_list_in_place(items):
         >>> orig
         ['I', 'love', 'cookies']
     """
+    
+    first_item = 0
+    last_item = len(items) - 1
 
-    for i in range(len(items) - 1):
-        popped_item = items.pop(0)
-        items.append(popped_item)
+    # Swapping elements, starting from the ends and moving in to the middle.
+    while first_item < last_item:
+        items[first_item], items[last_item] = items[last_item], items[first_item]
+        first_item = first_item + 1
+        last_item = last_item - 1
 
-    return items
+
 
 
 def duplicates(items):
@@ -486,7 +491,22 @@ def duplicates(items):
         ['apple', 'apple', 'berry']
     """
 
-    return []
+    # Create empty list to hold the duplicates.
+    dup_list = []
+
+    # Sort the list so that duplicates will be together.
+    items.sort()
+
+    # Append duplicates to duplicate list if they are not already there.
+    for i in range(0, len(items) - 1):
+        if items[i] == items[i + 1]:
+            if items[i] not in dup_list:
+                dup_list.append(items[i])
+
+    # Sort the list.
+    dup_list.sort()
+
+    return dup_list
 
 
 def find_letter_indices(words, letter):
@@ -516,7 +536,17 @@ def find_letter_indices(words, letter):
     `None`.)
     """
 
-    return []
+    index_list = []
+
+    for word in words:
+        if letter not in  word:
+            index_list.append(None)
+        else:
+            for i in range(0, len(word)):
+                if word[i] == letter:
+                    index_list.append(i)
+
+    return index_list
 
 #####################################################################
 # END OF PRACTICE: You can ignore everything below.
